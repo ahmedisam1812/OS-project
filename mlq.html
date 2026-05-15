@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLFQ - Feedback Simulator</title>
+    <link rel="stylesheet" href="mlq-style.css">
+</head>
+<body>
+    <div class="container">
+        <nav><a href="index.html">← Back to General Schedulers</a></nav>
+        
+        <header>
+            <h1>Multilevel Feedback Queue (MLFQ)</h1>
+            <p>Processes start at <b>Q0</b> and move down if they exceed the time quantum.</p>
+        </header>
+
+        <section class="config-bar">
+            <div class="input-group">
+                <label>Q0 (RR) Quantum:</label>
+                <input type="number" id="q0-quantum" value="2" min="1">
+            </div>
+            <div class="input-group">
+                <label>Q1 (RR) Quantum:</label>
+                <input type="number" id="q1-quantum" value="4" min="1">
+            </div>
+            <div class="spacer"></div>
+            <button id="add-btn" class="secondary">+ Add Process</button>
+            <button id="run-btn" class="primary">Run Simulation</button>
+        </section>
+
+        <main>
+            <table id="input-table">
+                <thead>
+                    <tr>
+                        <th>Process</th>
+                        <th>Arrival Time</th>
+                        <th>Burst Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="process-list"></tbody>
+            </table>
+
+            <div class="output-wrapper">
+                <div class="stats-row">
+                    <div class="card"><h3>Avg Response</h3><p id="avg-rt">0</p></div>
+                    <div class="card"><h3>Avg Waiting</h3><p id="avg-wt">0</p></div>
+                    <div class="card"><h3>Avg Turnaround</h3><p id="avg-tat">0</p></div>
+                </div>
+
+                <h3>Gantt Chart (Execution Flow)</h3>
+                <div id="gantt-chart"></div>
+
+                <h3>Per-Process Timing Breakdown</h3>
+                <div id="timeline-results"></div>
+            </div>
+        </main>
+    </div>
+    <script src="mlq-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CPU Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CPU Scheduling Simulator</h1>
+            <div class="algo-tabs">
+                <button class="tab active" data-algo="FCFS">FCFS</button>
+                <button class="tab" data-algo="SJF">SJF</button>
+                <button class="tab" data-algo="SRTF">SRTF</button>
+                <button class="tab" data-algo="RR">Round Robin</button>
+                <button class="tab" data-algo="Priority">Priority</button>
+                <a href="mlq.html" style="text-decoration: none;">
+    <button class="tab" data-algo="MLQ">MLQ</button>
+</a>
+</a></button>
+            </div>
+            <div id="config-panel" class="hidden">
+                <label for="quantum">Time Quantum:</label>
+                <input type="number" id="quantum" value="2" min="1">
+            </div>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h3>Processes</h3>
+                <table id="process-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Arrival</th>
+                            <th>Burst</th>
+                            <th>Priority</th>
+                            <th class="mlq-only hidden">Queue</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="process-list">
+                        </tbody>
+                </table>
+                <div class="actions">
+                    <button id="add-btn">+ Add Process</button>
+                    <button id="run-btn" class="primary-btn">Run Simulation</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+            </section>
+
+            <section class="output-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span id="avg-response">-</span>
+                        <p>Avg Response</p>
+                    </div>
+                    <div class="stat-card">
+                        <span id="avg-waiting">-</span>
+                        <p>Avg Waiting</p>
+                    </div>
+                    <div class="stat-card">
+                        <span id="avg-turnaround">-</span>
+                        <p>Avg Turnaround</p>
+                    </div>
+                </div>
+
+                <h3>Gantt Chart</h3>
+                <div id="gantt-chart"></div>
+
+                <h3>Timeline Breakdown</h3>
+                <div id="results-table-container"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
