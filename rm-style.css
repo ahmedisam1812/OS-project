@@ -1,0 +1,51 @@
+:root {
+    --bg-main: #05050a;
+    --card-bg: rgba(20, 20, 35, 0.7);
+    --accent-cyan: #00f2ff;
+    --accent-purple: #7000ff;
+    --text-bright: #ffffff;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: var(--bg-main);
+    background-image: radial-gradient(circle at 0% 0%, rgba(112,0,255,0.1) 0%, transparent 40%);
+    color: var(--text-bright);
+    font-family: 'Segoe UI', sans-serif;
+    padding: 30px;
+}
+
+.container { max-width: 1100px; margin: auto; }
+nav a { color: var(--accent-cyan); text-decoration: none; font-weight: bold; font-size: 12px; }
+
+header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.config-bar {
+    display: flex; gap: 20px; background: var(--card-bg); backdrop-filter: blur(10px);
+    padding: 20px; border-radius: 15px; border: 1px solid var(--border); margin-bottom: 30px;
+}
+
+input { background: #000; border: 1px solid var(--accent-cyan); color: #fff; padding: 8px; border-radius: 6px; width: 60px; }
+
+button { padding: 12px 20px; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; transition: 0.3s; }
+button.primary { background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple)); color: white; }
+button.secondary { background: rgba(255,255,255,0.05); color: white; border: 1px solid var(--border); }
+button:hover { transform: translateY(-2px); filter: brightness(1.2); }
+
+table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+tr { background: rgba(255,255,255,0.03); }
+td, th { padding: 15px; text-align: center; }
+
+#utilization-alert { margin-bottom: 20px; font-weight: bold; padding: 10px; border-radius: 8px; text-align: center; }
+
+#gantt-chart { display: flex; height: 50px; background: #000; border-radius: 8px; overflow: hidden; border: 1px solid #333; margin-bottom: 30px; }
+.gantt-block { display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; }
+
+.timeline-bar { height: 14px; background: #000; border-radius: 10px; display: flex; flex-grow: 1; overflow: hidden; border: 1px solid #222; }
+.segment { height: 100%; }
+.row-layout { display: flex; align-items: center; gap: 15px; margin: 10px 0; }

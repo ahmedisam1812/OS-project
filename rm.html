@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Monotonic Simulator</title>
+    <link rel="stylesheet" href="rm-style.css">
+</head>
+<body>
+    <div class="container">
+        <nav><a href="index.html">← Back to General Schedulers</a></nav>
+        
+        <header>
+            <h1>Rate Monotonic (RM)</h1>
+            <p>Static Priority: Shorter Period = Higher Priority</p>
+        </header>
+
+        <section class="config-bar">
+            <div class="input-group">
+                <label>Simulation Time:</label>
+                <input type="number" id="sim-limit" value="20" min="1">
+            </div>
+            <div class="spacer"></div>
+            <button id="add-btn" class="secondary">+ Add Task</button>
+            <button id="run-btn" class="primary">Run Simulation</button>
+        </section>
+
+        <main>
+            <table id="input-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Execution Time (C)</th>
+                        <th>Period (T)</th>
+                        <th>Priority</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="process-list"></tbody>
+            </table>
+
+            <div class="output-wrapper">
+                <div id="utilization-alert"></div>
+                
+                <h3>Gantt Chart (Hyper-period)</h3>
+                <div id="gantt-chart"></div>
+
+                <h3>Task Timeline Execution</h3>
+                <div id="timeline-results"></div>
+            </div>
+        </main>
+    </div>
+    <script src="rm-script.js"></script>
+</body>
+</html>
